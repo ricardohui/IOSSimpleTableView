@@ -9,14 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-    
+    let cellContent = ["Rob","Kristen", "Tommy","Ralphie"]
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     return 10
+     return cellContent.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default , reuseIdentifier: "Cell")
-        cell.textLabel?.text = "Top row"
+        cell.textLabel?.text = cellContent[indexPath.row]
         return cell
     }
     
